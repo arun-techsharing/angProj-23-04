@@ -1,0 +1,15 @@
+<ul>
+    <!-- <li>
+        <a routerLink="register" routerLinkActive="selecte">Register | </a>
+        <a routerLink="product" routerLinkActive="selectedLink">Product | </a>
+        <a routerLink="login" routerLinkActive="selectedLink">Login | </a>
+        <a routerLink="reachme" routerLinkActive="selectedLink">Contact Us</a>
+    </li> -->
+    <li *ngFor="let m of menuItems">
+        <a [routerLink]="m.urlPath" routerLinkActive="selectedLink">{{m.itemName}}</a>      
+    </li>
+    <li>
+        <a (click)="logOut()">Log out</a>
+    </li>
+</ul>
+<button (click)="loginIncre()">user Login increment</button>

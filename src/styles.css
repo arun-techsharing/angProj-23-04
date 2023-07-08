@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import '/node_modules/ngx-toastr/toastr.css';
+.flotleft{
+    float:left;
+}
+
+.clrbth{
+    clear:both;
+}
+
+.selectedLink{
+    color:green;
+    text-decoration: none;
+    font-weight: bold;
+}
+body{
+    margin: 0 auto;
+    width: 1400px;
+}

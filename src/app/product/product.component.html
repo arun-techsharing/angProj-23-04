@@ -1,0 +1,210 @@
+<h1 [innerText]="pagetitle"></h1>
+<p>we are discussing about the data binding {{pagetitle}}</p>
+<p>{{10 + 80}}</p>
+<img [src]="imgURL">
+<p>My name is {{candNm}} and i am learning angular</p>
+<button (click)="updateNm()">Change Name</button>
+
+<h2>Products on Sale</h2>
+<div class="row clrbth" [hidden]="true">
+    <div class="col-sm-6 col-md-4 col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+        <img src="../../assets/images/p1.JPG">
+    </div>
+    <div class="col-sm-6  col-md-4  col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+        <img src="../../assets/images/p2.JPG">
+    </div>
+    <div class="col-sm-6  col-md-4  col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+        <img src="../../assets/images/p3.JPG">
+    </div>
+    <div class="col-sm-6 col-md-4  col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+        <img src="../../assets/images/p4.JPG">
+    </div>
+</div>
+
+<h3>Using ngIf</h3>
+<div class="row clrbth" *ngIf="discountProducts">
+    <div class="col-sm-6 col-md-4 col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+        <img src="../../assets/images/p1.JPG">
+    </div>
+    <div class="col-sm-6  col-md-4  col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+        <img src="../../assets/images/p2.JPG">
+    </div>
+    <div class="col-sm-6  col-md-4  col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+        <img src="../../assets/images/p3.JPG">
+    </div>
+    <div class="col-sm-6 col-md-4  col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+        <img src="../../assets/images/p4.JPG">
+    </div>
+</div>
+<hr class="clrbth">
+<p>today's day - {{getTodayDay()}}</p>
+<div class="clrbth">
+    <h3>Thursday Thunder Deals</h3>
+
+    <div class="row clrbth" *ngIf="getTodayDay() == 'Thursday' && dayvalue == 4;then dealBlock else noDealsBlock">
+        <div class="col-sm-6 col-md-4 col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+            <img src="../../assets/images/p1.JPG">
+        </div>
+        <div class="col-sm-6  col-md-4  col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+            <img src="../../assets/images/p2.JPG">
+        </div>
+        <div class="col-sm-6  col-md-4  col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+            <img src="../../assets/images/p3.JPG">
+        </div>
+        <div class="col-sm-6 col-md-4  col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+            <img src="../../assets/images/p4.JPG">
+        </div>
+    </div>
+    <ng-template #dealBlock>
+        <h3>Deal Thursday</h3>
+        <div class="row clrbth">
+            <div class="col-sm-6  col-md-4  col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+                <img src="../../assets/images/p3.JPG">
+            </div>
+            <div class="col-sm-6 col-md-4  col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+                <img src="../../assets/images/p4.JPG">
+            </div>
+        </div>
+    </ng-template>
+    <ng-template #noDealsBlock>
+        <h3>No Deals</h3>
+        <div class="row clrbth">
+            <div class="col-sm-6 col-md-4 col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+                <img src="../../assets/images/p1.JPG">
+            </div>
+            <div class="col-sm-6  col-md-4  col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+                <img src="../../assets/images/p2.JPG">
+            </div>
+        </div>
+    </ng-template>
+</div>
+<hr class="clrbth">
+<div class="clrbth">
+    <h3>Fun Friday Deals</h3>
+
+    <div class="row clrbth" *ngIf="day == 'Friday'">
+        <div class="col-sm-6 col-md-4 col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+            <img src="../../assets/images/p1.JPG">
+        </div>
+        <div class="col-sm-6  col-md-4  col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+            <img src="../../assets/images/p2.JPG">
+        </div>
+        <div class="col-sm-6  col-md-4  col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+            <img src="../../assets/images/p3.JPG">
+        </div>
+        <div class="col-sm-6 col-md-4  col-lg-3 col-12 col-xl-1 clmbrd">
+            <img src="../../assets/images/p4.JPG">
+        </div>
+    </div>
+</div>
+<hr class="clrbth">
+<div class="clrbth">
+
+    <h3>Weekend Boananza</h3>
+
+    <div class="row clrbth" *ngIf="day == 'Saturday' || day == 'Sunday'">
+        <div class="col-sm-6 col-md-4 col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+            <img src="../../assets/images/p1.JPG">
+        </div>
+        <div class="col-sm-6  col-md-4  col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+            <img src="../../assets/images/p2.JPG">
+        </div>
+        <div class="col-sm-6  col-md-4  col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+            <img src="../../assets/images/p3.JPG">
+        </div>
+        <div class="col-sm-6 col-md-4  col-lg-3 col-12 col-xl-1 clmbrd flotleft">
+            <img src="../../assets/images/p4.JPG">
+        </div>
+    </div>
+
+</div>
+<h3>Product Categories based on length</h3>
+<ul *ngIf="productCtgy.length > 0">
+    <li *ngFor="let prod of productCtgy;let idx = index; let fst=first; let lst = last">
+        <span *ngIf="!fst && !lst"> {{idx+1}}. {{prod}} {{lst}}</span>
+    </li>
+</ul>
+<h3>printing only odd numbers</h3>
+<ul>
+    <li *ngFor="let prod of productCtgy;let idx = index;let od = odd">
+        <span *ngIf="od"> {{idx}}.{{prod}} {{od}}</span>
+    </li>
+</ul>
+<h3>printing only even numbers</h3>
+<ul>
+    <li *ngFor="let prod of productCtgy;let idx = index;let ev = even">
+        <span *ngIf="ev"> {{idx}}.{{prod}} {{ev}}</span>
+    </li>
+</ul>
+
+<h3>Binding Object</h3>
+<h3>Single object binding</h3>
+<ul>
+    <li>Product ID: <b>{{productList[0].productID}}</b></li>
+    <li>Product Name: {{productList[0].prodName}}</li>
+    <li>Product Price: {{productList[0].price}}</li>
+    <li>Product Category: {{productList[0].prdCtgy}}</li>
+    <li>Quantity Available: {{productList[0].quantityAvl}}</li>
+    <li>Discount: {{productList[0].dsctAvl}}</li>
+    <li *ngIf="productList[0].dsctAvl != false">Discount Per: {{productList[0].dsctPer}}</li>
+</ul>
+<select name="" id="">
+    <option *ngFor="let c of cities" [value]="c.ctyKey">{{c.usrVal}}</option>
+</select>
+<h3>ngFor example with array of objects in Table</h3>
+<table>
+    <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Product Category</th>
+        <th>Quantity Available</th>
+        <th>Discount</th>
+    </tr>
+    <tr *ngFor="let pdlst of productList">
+        <td [ngStyle]="{'color':'red'}">{{pdlst.productID}}</td>
+        <td [ngClass]="{'prodTitle':pdlst.quantityAvl > 0,'noProd':pdlst.quantityAvl == 0}" class="title">
+            {{pdlst.prodName}}</td>
+        <td>{{pdlst.price}}</td>
+        <td>{{pdlst.prdCtgy}}</td>
+        <td>{{pdlst.quantityAvl}}</td>
+        <td [ngStyle]="{'color':pdlst.dsctAvl == true?'blue':'red'}">{{pdlst.dsctAvl}}</td>
+    </tr>
+</table>
+
+<h3>ngFor example with a product card</h3>
+<div class="clrbth">
+
+    <h3>Diary Products</h3>
+
+    <div class="row clrbth">
+        <div *ngFor="let pdLst of productList" class="prdCard flotleft">
+            <img width="40%" [src]="pdLst.prdImg">
+            <h4>{{pdLst.prodName | uppercase}}</h4>
+            <h3>{{pdLst.productID}}</h3>
+            <p>{{pdLst.prdCtgy | lowercase}}</p>
+            <p>Price: {{pdLst.price | currency:'USD'}}</p>
+            <p>Quanity Available: {{pdLst.quantityAvl}}</p>
+            <p>Discount Available: {{pdLst.dsctAvl}}</p>
+            <p>Discount Percentage: {{pdLst.dsctPer | percent:'2.1-1'}}</p>
+            <p>Offer Expiry Date:{{pdLst.offerExpDt | date:'dd/mm/yyyy'}}</p>
+            <p>Price: {{pdLst.price |number:'2.1-3'}}</p>
+            <span *ngFor="let n of generateArray(pdLst.rating);let i = index;"><img width="8%"
+                    src="../../assets/images/rating.JPG"> </span>
+            <a [routerLink]="['/product/product-details/',pdLst.productID]">View Details</a>
+            <!-- <button (click)="redirectDtl(pdLst.productID)">View Details</button> -->
+            <a *ngIf="(userType=='Admin') "
+                [routerLink]="['/product/edit-product/',pdLst.productID]">Edit Product</a>
+        </div>
+    </div>
+
+    <div class="row clrbth">
+        <div>
+            <p>{{productCtgy | slice:1:6}}</p>
+        </div>
+    </div>
+    <button (click)="updID()">change Prod ID</button>
+    <button (click)="showdetail()">Show prod Dtl</button>
+    <app-product-detail *ngIf="prdDtlFlag" (userDataChanged)="getUpdatedCount($event)" [prodID]="prdID"></app-product-detail>
+    <p>User selected Product: {{userCount}}</p>
+</div>

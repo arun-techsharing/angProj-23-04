@@ -1,0 +1,18 @@
+<h3>Products</h3>
+
+    <div class="row clrbth storePrds">
+        <div *ngFor="let prod of storeProducts" class="prdCard flotleft">
+            <img width="200px" height="200px" [src]="prod.image">
+            <h4>{{prod.title | uppercase}}</h4>
+            <!-- <h3>{{prod.id}}</h3> -->
+            <p>Category:{{prod.category}}</p>
+            <p>Price: {{prod.price | currency:'USD'}}</p>
+            <p>Description: {{prod.description | slice:0:50}}</p>
+         
+            <!-- <span *ngFor="let n of generateArray(prod.rating);let i = index;"><img width="8%"
+                    src="../../assets/images/rating.JPG"> </span> -->
+            <!-- <a [routerLink]="['/product/product-details/',prod.productID]">View Details</a>
+            <a *ngIf="(userType=='Admin') "
+                [routerLink]="['/product/edit-product/',prod.productID]">Edit Product</a> -->
+        </div>
+    </div>

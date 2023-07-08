@@ -1,0 +1,54 @@
+<h1>Contact US</h1>
+<form [formGroup]="cntFmr" (ngSubmit)="submitEnq()">
+    <div>
+        <label for="">Name:</label>
+        <input type="text" formControlName="fstName"
+            [ngClass]="{'inputErr':(!cntFmr.controls.fstName.valid) && ((cntFmr.controls.fstName.touched) || (cntFmr.controls.fstName.dirty))}">
+        <!-- <div class="errorMsg"
+            *ngIf="(!cntFmr.controls.fstName.valid) && ((cntFmr.controls.fstName.touched) || (cntFmr.controls.fstName.dirty))">
+            First Name is required and minlength is 5</div> -->
+            <div class="errorMsg" *ngIf="cntFmr.controls.fstName.errors?.['required']">
+                First Name is required
+            </div>
+            <div class="errorMsg" *ngIf="cntFmr.controls.fstName.errors?.['minlength']">
+                First Name should have minimun of 5 charaters
+            </div>
+            <div class="errorMsg" *ngIf="cntFmr.controls.fstName.hasError('required')">
+                First Name is required
+            </div>
+            <div class="errorMsg" *ngIf="cntFmr.controls.fstName.hasError('minlength')">
+                First Name should have minimun of 5 charaters
+            </div>
+    </div>
+    <div>
+        <label for="">Contact Number:</label> <input type="text" formControlName="cntNbr"
+            [ngClass]="{'inputErr':(!cntFmr.controls.cntNbr.valid) && ((cntFmr.controls.cntNbr.touched) || (cntFmr.controls.cntNbr.dirty))}">
+        <div class="errorMsg"
+            *ngIf="(!cntFmr.controls.cntNbr.valid) && ((cntFmr.controls.cntNbr.touched) || (cntFmr.controls.cntNbr.dirty))">
+            Contact numner is required and it should be numeric</div>
+    </div>
+    <div>
+        <label for="">Age:</label> <input type="text" formControlName="age">
+        <div class="errorMsg" *ngIf="cntFmr.controls.age.errors?.['ageValInvaled'] == false">Age is invalid</div>
+  
+    </div>
+    <div>
+        <label for="">Reason:</label> <input type="text" formControlName="rsnforEnq">
+    </div>
+    <div>
+        <button>Submit</button>
+    </div>
+</form>
+
+<p>
+    Form Valid:{{cntFmr.valid}}
+</p>
+<p>
+    First name Valid:{{cntFmr.controls.fstName.valid}}
+</p>
+<p>
+    First name Valid:{{cntFmr.controls.cntNbr.valid}}
+</p>
+<p>
+    First name Valid:{{cntFmr.controls.rsnforEnq.valid}}
+</p>

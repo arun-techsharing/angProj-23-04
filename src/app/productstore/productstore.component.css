@@ -1,0 +1,30 @@
+.prdCard {
+    border: 1px solid lightgray;
+    width: 30%;
+    text-align: center;
+    padding: 10px 20px;
+
+}
+
+.prodTitle {
+    color: blue;
+
+}
+
+.noProd {
+    color: red
+}
+
+.title {
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.storePrds P{
+    text-align: center;
+}
+.prdCard h4{
+    text-transform: none;
+    font-size: 14px;
+    min-height: 50px;
+}

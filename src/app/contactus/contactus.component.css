@@ -1,0 +1,11 @@
+.errorMsg{
+    color:red;
+    font-size:12px;
+}
+.inputErr{
+    border: 1px solid red;
+}
+
+.ng-invalid.ng-dirty{
+    border: 1px solid red;
+}

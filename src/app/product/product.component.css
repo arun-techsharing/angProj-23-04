@@ -1,0 +1,19 @@
+.prdCard {
+    border: 1px solid lightgray;
+    width: 15%;
+    text-align: center;
+}
+
+.prodTitle {
+    color: blue;
+
+}
+
+.noProd {
+    color: red
+}
+
+.title {
+    text-decoration: underline;
+    font-weight: 700;
+}

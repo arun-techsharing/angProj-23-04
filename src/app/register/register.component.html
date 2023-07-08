@@ -1,0 +1,36 @@
+<h1>Register</h1>
+<p>Register yourself by providing the below values</p>
+
+<form #regFm="ngForm" (ngSubmit)="registerUser(regFm)">
+
+    <div>
+        <label for="fNAme">First Name:</label><input type="text" name="fNAme" id="fstNm" #fstNm="ngModel" ngModel required>
+    </div>
+    <div>
+        <label for="lNme">Last Name:</label><input type="text" name="lNme" id="lstName" ngModel required minlength="8">
+    </div>
+    <div>
+        <label for="cntNbr">Contact Number:</label><input type="text" name="cntNbr" id="cntdtNbr" ngModel required maxlength="10">
+    </div>
+    <div>
+        <label for="city">City:</label>
+        <select name="cty" id="cty" ngModel required>
+            <option value="chn">Chennai</option>
+            <option value="blr">Bangalore</option>
+            <option value="hyd">Hyderabad</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit" [disabled]="!regFm.valid">Register</button>
+    </div>
+</form>
+<div>
+    <p>{{regFm.value | json}}</p>
+    <p>Form valid:{{regFm.valid}}</p>
+    <p>{{regFm.touched}}</p>
+    <p>{{regFm.submitted}}</p>
+    <p>First Name values</p>
+    <p>Value: {{fstNm.value}}</p>
+    <p>Touched: {{fstNm.touched}}</p>
+    <p>Valid:{{fstNm.valid}}</p>
+</div>
